@@ -10,7 +10,7 @@ steps:
 - name: hugo build
   image: plugins/hugo
   settings:
-    hugo_version: 0.92
+    hugo_version: 0.92.2
     buildDrafts: true
     buildExpired: true
     buildFuture: true
