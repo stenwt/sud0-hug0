@@ -14,7 +14,7 @@ steps:
     buildDrafts: true
     buildExpired: true
     buildFuture: true
-    validate: true
+    #validate: true
 - name: hugo upload
   image: plugins/s3
   settings:
