@@ -1,0 +1,34 @@
+---
+kind: pipeline
+type: kubernetes
+name: build-hugo
+
+metadata:
+  namespace: drone
+
+steps:
+- name: hugo build
+  image: plugins/hugo
+  settings:
+    hugo_version: 0.92
+    buildDrafts: true
+    buildExpired: true
+    buildFuture: true
+    validate: true
+- name: hugo deploy
+dns_config:
+  options:
+    - name: ndots
+      value: 1
+
+- name: hugo upload
+  image: plugins/s3
+  settings:
+    bucket: test.sud0.com
+    access_key:
+      from_secret: aws_access_key_id
+    secret_key:
+      from_secret: aws_secret_access_key
+    acl: public-read
+    source: public/**/*
+    target: /

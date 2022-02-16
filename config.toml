@@ -1,0 +1,4 @@
+baseURL = 'https://sud0.com/'
+languageCode = 'en-us'
+title = 'sud0.com'
+theme = 'dimension'
