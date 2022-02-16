@@ -15,12 +15,6 @@ steps:
     buildExpired: true
     buildFuture: true
     validate: true
-- name: hugo deploy
-dns_config:
-  options:
-    - name: ndots
-      value: 1
-
 - name: hugo upload
   image: plugins/s3
   settings:
@@ -32,3 +26,7 @@ dns_config:
     acl: public-read
     source: public/**/*
     target: /
+dns_config:
+  options:
+    - name: ndots
+      value: 1
