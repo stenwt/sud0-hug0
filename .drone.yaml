@@ -15,9 +15,6 @@ steps:
   image: plugins/hugo
   settings:
     hugo_version: 0.92.2
-    buildDrafts: true
-    buildExpired: true
-    buildFuture: true
     #validate: true
 - name: hugo upload
   image: plugins/s3
