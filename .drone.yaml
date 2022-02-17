@@ -22,8 +22,8 @@ steps:
 - name: hugo upload
   image: plugins/s3
   settings:
-    bucket: test.sud0.com
-    region: us-east-2
+    bucket: sud0.com
+    region: us-east-1
     access_key:
       from_secret: aws_access_key_id
     secret_key:
