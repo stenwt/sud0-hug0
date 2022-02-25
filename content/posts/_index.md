@@ -2,5 +2,5 @@
 title: posts
 description: stuff I wrote
 logo: "/hash-white.png"
-draft: true
+draft: false
 ---
