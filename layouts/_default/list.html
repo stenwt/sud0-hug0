@@ -34,7 +34,11 @@
                                         </li>
                                     {{ else }}
                                         {{ if isset .Params "externallink" }}
-                                            <li><a href="{{ .Params.externallink }}" target="_blank">{{ .Title }}</a></li>
+                                            {{ if isset .Params "rel" }}
+					        <li><a href="{{ .Params.externallink }}" rel="{{ .Params.rel }}" target="_blank">{{ .Title }}</a></li>
+                                            {{else}}
+                                                <li><a href="{{ .Params.externallink }}" target="_blank">{{ .Title }}</a></li>
+                                            {{end}}
                                         {{else}}
                                             <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
                                         {{end}}
